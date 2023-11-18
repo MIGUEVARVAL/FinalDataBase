@@ -7,19 +7,20 @@ from Components import load
 
 # Define paths
 
-data_path = 'golden_stage'
+data_path = 'Components\golden_stage'
 db_path='DB'
 
 # Variables
 
-db_name = 'presupuesto.db'
+db_name = 'tiendas.db'
 
 # Execution
 if __name__ == '__main__':
     # Read the data from the csv file
-    i=3
-    df = pd.read_excel(os.path.join(data_path, 'gastos_info.xlsx'))
-    # Create the data warehouse
+    df = pd.read_excel(os.path.join(data_path, 'Sales_Dataset_Input_Info.xlsx'))
+    # Create the data 
     db.create_db(db_name,db_path)
-    # Insert the data into the data warehouse
-    load.insert_data(df,db_name, db_path,i)
+    # Insert the data 
+    load.insert_data(df,db_name, db_path)
+
+
